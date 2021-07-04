@@ -1,29 +1,29 @@
 // Dependency management for all libs from all submodules
 // Upgrading process should be handled carefully because code could not working after upgrade
 ext {
-    javaSourceCompatibility = 11
-    javaTargetCompatibility = 11
+    javaSourceCompatibility = 16
+    javaTargetCompatibility = 16
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-gradle-plugin
-    springBootVersion = "2.3.12.RELEASE"
+    springBootVersion = "2.4.8"
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter
-    springBootStarterVersion = "2.3.12.RELEASE"
+    springBootStarterVersion = "2.4.8"
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
-    springBootStarterWebVersion = "2.3.12.RELEASE"
+    springBootStarterWebVersion = "2.4.8"
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
-    springBootStarterSecurityVersion = "2.3.12.RELEASE"
+    springBootStarterSecurityVersion = "2.4.8"
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
-    springBootStarterJPAVersion = "2.3.12.RELEASE"
+    springBootStarterJPAVersion = "2.4.8"
 
     // https://mvnrepository.com/artifact/io.spring.dependency-management/io.spring.dependency-management.gradle.plugin
     springDependencyManagementGradlePlugin = "1.0.11.RELEASE"
 
-    // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies
-    springCloudVersion = "Hoxton.SR11"
+    // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-bootstrap
+    springCloudVersion = "3.0.3"
 
     // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-zuul
     springCloudNetflixZuulVersion = "2.2.8.RELEASE"
@@ -33,6 +33,9 @@ ext {
 
     // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-client
     springCloudNetflixEurekaClientVersion = "3.0.3"
+
+    // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+    javaxServletAPIVersion = "4.0.1"
 
     // https://mvnrepository.com/artifact/org.hsqldb/hsqldb
     hsqldbVersion = "2.6.0"
