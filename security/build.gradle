@@ -1,0 +1,30 @@
+buildscript {
+    // External dependencies for modules.
+    apply from: '../external.gradle'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+plugins {
+    id 'org.springframework.boot' version "${springBootVersion}"
+    id 'io.spring.dependency-management' version "${springDependencyManagementGradlePlugin}"
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://repo.spring.io/milestone' }
+}
+
+sourceCompatibility = javaSourceCompatibility
+targetCompatibility = javaTargetCompatibility
+
+dependencies {
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter', version: springBootStarterVersion
+}

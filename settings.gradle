@@ -1,1 +1,1 @@
-include ':eureka'
+include ':eureka', ':security', ':web'
