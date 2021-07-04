@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: spring-cloud-eureka-client
+server:
+  port: 20002
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:20000/eureka}
+  instance:
+    preferIpAddress: true

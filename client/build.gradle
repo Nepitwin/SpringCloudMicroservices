@@ -26,9 +26,7 @@ sourceCompatibility = javaSourceCompatibility
 targetCompatibility = javaTargetCompatibility
 
 dependencies {
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: springBootStarterVersion
     implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client', version: springCloudNetflixEurekaClientVersion
-    implementation group: 'org.springframework.boot', name: 'spring-boot-starter', version: springBootStarterVersion
-    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: springBootStarterSecurityVersion
-    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: springBootStarterJPAVersion
-    implementation group: 'org.hsqldb', name: 'hsqldb', version: hsqldbVersion
+
 }
