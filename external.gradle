@@ -1,0 +1,15 @@
+// Dependency management for all libs from all submodules
+// Upgrading process should be handled carefully because code could not working after upgrade
+ext {
+    javaSourceCompatibility = 16
+    javaTargetCompatibility = 16
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-gradle-plugin
+    springBootVersion = "2.5.2"
+    // https://mvnrepository.com/artifact/io.spring.dependency-management/io.spring.dependency-management.gradle.plugin
+    springDependencyManagementGradlePlugin = "1.0.11.RELEASE"
+    // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies
+    springCloudVersion = "2020.0.3"
+    // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-server
+    springCloudNetflixEurekaServerVersion = "3.0.3"
+}
