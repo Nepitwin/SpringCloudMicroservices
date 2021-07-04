@@ -39,4 +39,18 @@ ext {
 
     // https://mvnrepository.com/artifact/org.hsqldb/hsqldb
     hsqldbVersion = "2.6.0"
+
+    vaadinVersion = "8.5.1"
+    vaadinSpringBootStarterVersion = "20.0.3"
+    vaadinExtSecurityVersion = "2.0.0.RELEASE"
+    vaadinExtBootVersion = "2.0.0.RELEASE"
+    vaadinSpringI18NVersion = "2.0.0.RELEASE"
+    vaadinAddonsCountryFlag = "1.0.1"
+
+    h2DatabaseVersion = "1.4.195"
+    springBootDevToolsVersion = "1.5.8.RELEASE"
+    springCloudStarterFeignClientVersion = "1.3.0.RELEASE"
+    springBootDevToolsVersion = "2.0.4.RELEASE"
+
+
 }

@@ -1,0 +1,4 @@
+# CC0 Creative Commons License
+background.jpg = https://pixabay.com/de/hirsch-traum-tier-fantasie-1333814/
+bugs.jpf = https://pixabay.com/de/gl%C3%BCck-marienk%C3%A4fer-geheimnis-2027514/
+secret.png = https://pixabay.com/de/stempel-top-secret-geheim-2340247/#

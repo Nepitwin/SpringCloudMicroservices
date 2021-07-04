@@ -1,13 +1,16 @@
-package com.asekulsk.microservice.client;
+package com.asekulsk.microservice.web;
 
+import com.vaadin.spring.annotation.EnableVaadin;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
+@EnableVaadin
 @SpringBootApplication
+@EnableEurekaClient
 public class WebProvider {
 
     public static void main(String[] args) {
-        System.out.println("Hello i'm a web provider :)");
         SpringApplication.run(WebProvider.class, args);
     }
 }

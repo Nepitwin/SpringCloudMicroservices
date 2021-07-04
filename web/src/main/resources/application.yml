@@ -1,0 +1,28 @@
+# Spring configuration for production
+spring:
+  application:
+    name: web-service  # Service registers under this name
+#  jmx:
+#    default-domain: web-service # Register beans to this domain.
+#  cloud:
+#    config:
+#      fail-fast: true
+
+eureka:
+  client:
+#    healthcheck:
+#      enabled: true
+    serviceUrl:
+      defaultZone: http://127.0.1:20000/eureka/
+
+#monitoring:
+#  ribbon:
+#    listOfServers: 192.168.116.123:20001
+
+# HTTP Server
+server:
+  port: 20003   # HTTP (Tomcat) port
+
+ribbon:
+  eureka:
+    enabled: false

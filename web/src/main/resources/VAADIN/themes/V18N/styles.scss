@@ -1,0 +1,11 @@
+@import "addons";
+@import "V18N";
+
+/* This file prefixes all rules with the theme name to avoid causing conflicts with other themes. */
+/* The actual styles should be defined in V18N.scss */
+.V18N {
+  @include addons;
+
+  // Include V18N theme styles
+  @include V18N;
+}

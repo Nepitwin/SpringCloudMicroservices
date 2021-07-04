@@ -20,12 +20,53 @@ plugins {
 repositories {
     mavenCentral()
     maven { url 'https://repo.spring.io/milestone' }
+    maven { url "https://maven.vaadin.com/vaadin-addons" }
 }
 
 sourceCompatibility = javaSourceCompatibility
 targetCompatibility = javaTargetCompatibility
 
 dependencies {
+    // VAADIN 8 DEPENDENCIES
+
+    // https://mvnrepository.com/artifact/org.vaadin.addons.countryflag/country-flag
+    implementation group: 'org.vaadin.addons.countryflag', name: 'country-flag', version: vaadinAddonsCountryFlag
+
+    // https://mvnrepository.com/artifact/org.vaadin.spring.addons/vaadin-spring-addon-i18n
+    implementation group: 'org.vaadin.spring.addons', name: 'vaadin-spring-addon-i18n', version: vaadinSpringI18NVersion
+
+    // VAADIN 8 SECURITY DEPENDENCIES
+    // https://mvnrepository.com/artifact/org.vaadin.spring.extensions/vaadin-spring-ext-security
+    implementation group: 'org.vaadin.spring.extensions', name: 'vaadin-spring-ext-security', version: vaadinExtSecurityVersion
+
+    // https://mvnrepository.com/artifact/com.vaadin/vaadin-spring-boot-starter
+    implementation group: 'com.vaadin', name: 'vaadin-spring-boot-starter', version: vaadinSpringBootStarterVersion
+
+    // SPRING BOOT DEPENDENCIES
+
+    // https://mvnrepository.com/artifact/org.vaadin.spring.extensions/vaadin-spring-ext-boot
+    implementation group: 'org.vaadin.spring.extensions', name: 'vaadin-spring-ext-boot', version: vaadinExtBootVersion
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: springBootStarterWebVersion
+
+    // ONLY FOR DEVELOPMENT NEEDED
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools
+    implementation group: 'org.springframework.boot', name: 'spring-boot-devtools', version: springBootDevToolsVersion
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
+    //implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: springBootStarterSecurityVersion
+
+    // SPRING CLOUD DEPENDENCIES
     implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-bootstrap', version: springCloudVersion
-    implementation group: 'org.springframework.boot', name: 'spring-boot-starter', version: springBootStarterVersion
+    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client', version: springCloudNetflixEurekaClientVersion
+
+    // https://mvnrepository.com/artifact/com.h2database/h2
+    implementation group: 'com.h2database', name: 'h2', version: h2DatabaseVersion
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "com.vaadin:vaadin-bom:${vaadinVersion}"
+    }
 }
