@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: api-gateway
+
+server:
+  port: 20001
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:20000/eureka}
+  instance:
+    preferIpAddress: true
+
+zuul:
+  routes:
+    greeting:
+      url: http://localhost:20002/greeting
+
+ribbon:
+  eureka:
+    enabled: false

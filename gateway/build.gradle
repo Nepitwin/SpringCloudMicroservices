@@ -26,6 +26,12 @@ sourceCompatibility = javaSourceCompatibility
 targetCompatibility = javaTargetCompatibility
 
 dependencies {
-    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-zuul', version: springBootStarterWebVersion
+    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-zuul', version: springCloudNetflixZuulVersion
     implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client', version: springCloudNetflixEurekaClientVersion
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
 }

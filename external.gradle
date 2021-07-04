@@ -1,29 +1,29 @@
 // Dependency management for all libs from all submodules
 // Upgrading process should be handled carefully because code could not working after upgrade
 ext {
-    javaSourceCompatibility = 16
-    javaTargetCompatibility = 16
+    javaSourceCompatibility = 11
+    javaTargetCompatibility = 11
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-gradle-plugin
-    springBootVersion = "2.5.2"
+    springBootVersion = "2.3.12.RELEASE"
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter
-    springBootStarterVersion = "2.5.2"
+    springBootStarterVersion = "2.3.12.RELEASE"
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
-    springBootStarterWebVersion = "2.5.2"
+    springBootStarterWebVersion = "2.3.12.RELEASE"
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
-    springBootStarterSecurityVersion = "2.5.2"
+    springBootStarterSecurityVersion = "2.3.12.RELEASE"
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
-    springBootStarterJPAVersion = "2.5.2"
+    springBootStarterJPAVersion = "2.3.12.RELEASE"
 
     // https://mvnrepository.com/artifact/io.spring.dependency-management/io.spring.dependency-management.gradle.plugin
     springDependencyManagementGradlePlugin = "1.0.11.RELEASE"
 
     // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies
-    springCloudVersion = "2020.0.3"
+    springCloudVersion = "Hoxton.SR11"
 
     // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-zuul
     springCloudNetflixZuulVersion = "2.2.8.RELEASE"
