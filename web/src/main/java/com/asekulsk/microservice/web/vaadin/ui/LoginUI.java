@@ -1,8 +1,24 @@
-package com.asekulsk.microservice.web.ui;
+/*
+ * Copyright 2018 Andreas Sekulski
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
-import com.asekulsk.microservice.web.component.language.LanguageSelector;
-import com.asekulsk.microservice.web.util.HTML;
-import com.asekulsk.microservice.web.util.V18NTheme;
+package com.asekulsk.microservice.web.vaadin.ui;
+
+import com.asekulsk.microservice.web.vaadin.component.language.LanguageSelector;
+import com.asekulsk.microservice.web.vaadin.util.HTML;
+import com.asekulsk.microservice.web.vaadin.util.V18NTheme;
 import com.vaadin.annotations.Theme;
 import com.vaadin.event.ShortcutAction;
 import com.vaadin.icons.VaadinIcons;
@@ -40,8 +56,8 @@ public class LoginUI extends TranslatableUI {
     /**
      * Vaadin based spring web security setup
      */
-    //@Autowired
-    //private VaadinSharedSecurity vaadinSecurity;
+    @Autowired
+    private VaadinSharedSecurity vaadinSecurity;
 
     /**
      * Notification for login, logout or error messages.
@@ -204,7 +220,6 @@ public class LoginUI extends TranslatableUI {
      * Login method to try to log in.
      */
     private void login() {
-        /*
         try {
             vaadinSecurity.login(usernameField.getValue(), passwordField.getValue(), true);
         } catch (AuthenticationException ex) {
@@ -228,6 +243,5 @@ public class LoginUI extends TranslatableUI {
         } finally {
             login.setEnabled(true);
         }
-        */
     }
 }

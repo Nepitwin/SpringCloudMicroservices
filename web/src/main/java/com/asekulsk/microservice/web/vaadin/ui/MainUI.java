@@ -1,10 +1,28 @@
-package com.asekulsk.microservice.web.ui;
+/*
+ * Copyright 2018 Andreas Sekulski
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
-import com.asekulsk.microservice.web.component.language.LanguageSelector;
-import com.asekulsk.microservice.web.component.menu.*;
-import com.asekulsk.microservice.web.layout.NavigatorLayout;
-import com.asekulsk.microservice.web.view.AdminView;
-import com.asekulsk.microservice.web.view.BugView;
+package com.asekulsk.microservice.web.vaadin.ui;
+
+import com.asekulsk.microservice.web.spring.security.type.RoleType;
+import com.asekulsk.microservice.web.spring.security.util.SecurityContextUtils;
+import com.asekulsk.microservice.web.vaadin.component.language.LanguageSelector;
+import com.asekulsk.microservice.web.vaadin.component.menu.*;
+import com.asekulsk.microservice.web.vaadin.layout.NavigatorLayout;
+import com.asekulsk.microservice.web.vaadin.view.AdminView;
+import com.asekulsk.microservice.web.vaadin.view.BugView;
 import com.vaadin.annotations.Theme;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.server.VaadinRequest;
@@ -42,8 +60,8 @@ public class MainUI extends TranslatableUI {
     /**
      * Vaadin security provider to access user management.
      */
-    //@Autowired
-    //private VaadinSecurity vaadinSecurity;
+    @Autowired
+    private VaadinSecurity vaadinSecurity;
 
     /**
      * View provider to switch views.
@@ -87,13 +105,13 @@ public class MainUI extends TranslatableUI {
         // Add menu component
         menuContainers = new ArrayList<MenuContainer>();
         menuContainers.add(new MenuContainerTitle("menu.title", ValoTheme.MENU_TITLE, ContentMode.HTML, i18n, languageSelector.getLocale()));
-        //menuContainers.add(new MenuContainerUser(vaadinSecurity, i18n, languageSelector.getLocale()));
+        menuContainers.add(new MenuContainerUser(vaadinSecurity, i18n, languageSelector.getLocale()));
         menuContainers.add(new MenuContainerLabel("menu.name", ValoTheme.MENU_SUBTITLE, i18n, languageSelector.getLocale()));
 
-        //if(SecurityContextUtils.hasRole(RoleType.ROLE_ADMIN)) {
+        if(SecurityContextUtils.hasRole(RoleType.ROLE_ADMIN)) {
             // Only if admin is logged in
             menuContainers.add(new MenuContainerView(AdminView.class, AdminView.VIEW_NAME, AdminView.VIEW_DESCRIPTION, AdminView.VIEW_ICON, navigator, i18n, languageSelector.getLocale()));
-        //}
+        }
 
         menuContainers.add(new MenuContainerView(BugView.class, BugView.VIEW_NAME, BugView.VIEW_DESCRIPTION, BugView.VIEW_ICON, navigator, i18n, languageSelector.getLocale()));
 

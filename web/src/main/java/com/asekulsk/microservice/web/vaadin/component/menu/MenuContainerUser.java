@@ -1,5 +1,22 @@
-package com.asekulsk.microservice.web.component.menu;
+/*
+ * Copyright 2018 Andreas Sekulski
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
+package com.asekulsk.microservice.web.vaadin.component.menu;
+
+import com.asekulsk.microservice.web.spring.security.util.SecurityContextUtils;
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.MenuBar;
@@ -56,7 +73,7 @@ public class MenuContainerUser implements MenuContainer {
     @Override
     public Component build() {
         menuBar.addStyleName("user-menu");
-        MenuBar.MenuItem menuBarItem = menuBar.addItem(/*SecurityContextUtils.getUser().getUsername()*/ "Max Mustermann", VaadinIcons.USER, null);
+        MenuBar.MenuItem menuBarItem = menuBar.addItem(SecurityContextUtils.getUser().getUsername(), VaadinIcons.USER, null);
         menuBarItem.addItem("Profile", null);
         menuBarItem.addItem("Preferences", null);
         menuBarItem.addSeparator();
@@ -68,7 +85,7 @@ public class MenuContainerUser implements MenuContainer {
     public void I18N(Locale locale) {
         if (i18N != null) {
             menuBar.removeItems();
-            MenuBar.MenuItem menuBarItem = menuBar.addItem(/*SecurityContextUtils.getUser().getUsername()*/ "Max Mustermann", VaadinIcons.USER, null);
+            MenuBar.MenuItem menuBarItem = menuBar.addItem(SecurityContextUtils.getUser().getUsername(), VaadinIcons.USER, null);
             menuBarItem.addItem(i18N.get("menu.profile", locale), null);
             menuBarItem.addItem(i18N.get("menu.preferences", locale), null);
             menuBarItem.addSeparator();
